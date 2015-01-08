@@ -34,12 +34,11 @@ body {
 	float: right;
 	margin-top: 20px;
 	margin-right: 40px;
+	div {
+		display: inline-block;
+ 		padding: 5px;
+	}
 }
-
- #nav-bar div {
- 	display: inline-block;
- 	padding: 5px;
- }
 
  header a {
  	text-decoration: none;
