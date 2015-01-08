@@ -3,27 +3,39 @@
 
 		<div class="row">
 			<header>
+				<h2 id="logo"><a href="#">Pet Me</a></h2>
 				<nav id="nav-bar">
+				<div class="btn btn-success">
 					<%= link_to "Post a pet!", new_post_path %>
+				</div>
+				<div>
 					<%= link_to "Sign Up", signup_path %>
+				</div>
+				<div>
 					<%= link_to "Log In", login_path %>
+				</div>
+				<div>
 					<% if logged_in? %>
 						<%= link_to 'Log Out', logout_path, method: :delete %>
 					<% end %>
+				</div>
 				</nav>
 			</header>
 			
-			<div id="search">
-				<h1>Find a Pet</h1>
-				<%= form_tag(list_path, method: "get") do %>
+			<section class="primary">
+				<div id="search">
+					<h1>Find pets around your location</h1>
+					<h3>Contact owners, see images, and choose your preference</h3>
+					<%= form_tag(list_path, method: "get") do %>
 
-					<%= select_tag "type", options_from_collection_for_select(TYPES, "to_s", "to_s") %>
+						<%= select_tag "type", options_from_collection_for_select(TYPES, "to_s", "to_s") %>
+						<%= select_tag "gender", options_from_collection_for_select(GENDERS, "to_s", "to_s") %>
 
-					<%= submit_tag "Submit" %>
+						<%= submit_tag "Submit" %>
 
-				<% end %>
-			</div>
-
+					<% end %>
+				</div>
+			</section>
 		</div>
 	</div>
 </div>

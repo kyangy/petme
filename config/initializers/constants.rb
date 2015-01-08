@@ -1,1 +1,3 @@
-TYPES = ["Dogs", "Cats", "Birds", "Fish"]
+TYPES = ["Dogs", "Cats", "Birds", "Aquatic", "Horses", "Small & Furry"]
+
+GENDERS = ["Male", "Female", "Unknown"]
