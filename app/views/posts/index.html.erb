@@ -1,0 +1,17 @@
+<h1><%= params[:type] %></h1>
+
+<% @posts.each do |post| %>
+
+	<div>
+		Breed: <%= post.breed %>
+	</div>
+
+	<div>
+		Age: <%= post.age %>
+	</div>
+
+	<div>
+		Gender: <%= post.gender %>
+	</div>
+
+<% end %>

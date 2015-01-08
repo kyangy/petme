@@ -1,0 +1,36 @@
+<div id="main">
+	<div class="container-fluid">
+
+		<div class="row">
+			<header>
+				<nav id="nav-bar">
+					<%= link_to "Post a pet!", new_post_path %>
+					<%= link_to "Sign Up", signup_path %>
+					<%= link_to "Log In", login_path %>
+					<% if logged_in? %>
+						<%= link_to 'Log Out', logout_path, method: :delete %>
+					<% end %>
+				</nav>
+			</header>
+			
+			<div id="search">
+				<h1>Find a Pet</h1>
+				<%= form_tag(list_path, method: "get") do %>
+
+					<%= select_tag "type", options_from_collection_for_select(TYPES, "to_s", "to_s") %>
+
+					<%= submit_tag "Submit" %>
+
+				<% end %>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+

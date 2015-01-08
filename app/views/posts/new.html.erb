@@ -1,0 +1,32 @@
+<h1>Add a pet!</h1>
+
+<div>
+<%= form_for @post do |f| %>
+
+	<div>
+		<%= f.label :type, "Type:" %>
+		<%= f.text_field :type %>
+	</div>
+	<div>	
+		<%= f.label :breed, "Breed:" %>
+		<%= f.text_field :breed %>
+	</div>
+	<div>
+		<%= f.label :age, "Age:" %>
+		<%= f.text_field :age %>
+	</div>
+	<div>
+		<%= f.label :gender, "Gender:" %>
+		<%= f.text_field :gender %>
+	</div>
+	<div>
+		<%= f.label :price, "Price:" %>
+		<%= f.text_field :price %>
+	</div>
+
+	<%= f.file_field :image %>
+	<%= f.submit "Post this pet" %>
+
+<% end %>
+
+</div>
