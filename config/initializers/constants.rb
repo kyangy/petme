@@ -1,5 +1,5 @@
 TYPES = ["Dogs", "Cats", "Birds", "Aquatic", "Horses", "Small & Furry", "Other"]
 
-GENDERS = ["Male", "Female", "Any"]
+GENDERS = ["Male", "Female", "Unknown"]
 
-AGES = ["Baby", "Young", "Adult", "Any"]
+AGES = ["Baby", "Young", "Adult"]

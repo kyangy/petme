@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
 	def index
-		@posts = Post.where(type: params[:type])
+		@posts = Post.where(type: params[:type], gender: params[:gender], age: params[:age]).all
 	end
 
 	def show
