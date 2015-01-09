@@ -3,7 +3,7 @@
 
 		<div class="row">
 			<header>
-				<h2 id="logo"><a href="#">Pet Me</a></h2>
+				<h2 id="logo"><%= link_to "Pet Me", root_path %></h2>
 				<nav id="nav-bar">
 				<div class="btn btn-success">
 					<%= link_to "Post a pet!", new_post_path %>
@@ -30,7 +30,7 @@
 
 						<%= select_tag "type", options_from_collection_for_select(TYPES, "to_s", "to_s") %>
 						<%= select_tag "gender", options_from_collection_for_select(GENDERS, "to_s", "to_s") %>
-
+						<%= select_tag "age", options_from_collection_for_select(AGES, "to_s", "to_s") %>
 						<%= submit_tag "Submit" %>
 
 					<% end %>

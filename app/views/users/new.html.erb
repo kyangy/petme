@@ -1,28 +1,45 @@
-<div class="primary">
+<div id="signup">
+	<%= render "shared/menu" %>
+
 	<div>
-		<h1>Sign Up</h1>
+		<ul>
+		  <% @user.errors.full_messages.each do |msg| %>
+		    <li><%= msg %></li>
+		  <% end %>
+		</ul>
+	</div>
 
-		<%= form_for @user do |f| %>
+	<div class="primary">
+		<div>
+			<h1>Sign Up</h1>
 
-			<div class="form_control input-lg">
-				<%= f.label :name %>
-				<%= f.text_field :name %>
-			</div>
+			<%= form_for @user do |f| %>
 
-			<div class="form_control input-lg">
-				<%= f.label :email %>
-				<%= f.text_field :email %>
-			</div>
+				<div class="form_control input-lg">
+					<%= f.label :name %>
+					<%= f.text_field :name %>
+				</div>
 
-			<div class="form_control input-lg">
-				<%= f.label :password %>
-				<%= f.password_field :password %>
-			</div>
+				<div class="form_control input-lg">
+					<%= f.label :email %>
+					<%= f.text_field :email %>
+				</div>
 
-			<div>
-				<%= f.submit "Sign me up!" %>
-			</div>
+				<div class="form_control input-lg">
+					<%= f.label :password %>
+					<%= f.password_field :password %>
+				</div>
 
-		<% end %>
+				<div class="form_control input-lg">
+					<%= f.label :password_confirmation %>
+					<%= f.password_field :password_confirmation %>
+				</div>
+
+				<div>
+					<%= f.submit "Sign me up!" %>
+				</div>
+
+			<% end %>
+		</div>
 	</div>
 </div>

@@ -23,11 +23,16 @@ body {
 	height: 100%;
 }
 
- #main {
- 	background: url(<%= image_path 'dog.jpg' %>);
- 	width: 100%;
+@mixin background {
+	width: 100%;
  	height: 100%;
  	background-size: cover;
+}
+
+
+#main {
+ 	background: url(<%= image_path 'dog.jpg' %>);
+ 	@include background;
  }
 
 #nav-bar {
@@ -53,16 +58,17 @@ body {
  #search {
  	display: inline-block;
  	text-align: center;
- }
-
- #search h1, h3 {
- 	color: white;
+ 	h1,
+ 	h3 {
+ 		color: white;
+ 	}
  }
 
  .primary {
  	text-align: center;
  	margin-top: 100px;
  }
+
 
 
 

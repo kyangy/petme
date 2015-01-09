@@ -1,23 +1,27 @@
-<div class="primary">
-	<div>
-		<h1>Log In</h1>
+<div id="login">
+	<%= render "shared/menu" %>
 
-		<%= form_for :login do |f| %>
+	<div class="primary">
+		<div>
+			<h1>Log In</h1>
 
-			<div class="form_control input-lg">
-				<%= f.label :email %>
-				<%= f.text_field :email %>
-			</div>
+			<%= form_for :login do |f| %>
 
-			<div class="form_control input-lg">
-				<%= f.label :password %>
-				<%= f.password_field :password %>
-			</div>
+				<div class="form_control input-lg">
+					<%= f.label :email %>
+					<%= f.text_field :email %>
+				</div>
 
-			<div>
-				<%= f.submit "Log In" %>
-			</div>
+				<div class="form_control input-lg">
+					<%= f.label :password %>
+					<%= f.password_field :password %>
+				</div>
 
-		<% end %>
+				<div>
+					<%= f.submit "Log In" %>
+				</div>
+
+			<% end %>
+		</div>
 	</div>
 </div>

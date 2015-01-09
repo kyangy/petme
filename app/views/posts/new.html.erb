@@ -1,32 +1,43 @@
-<h1>Add a pet!</h1>
+<%= render "shared/menu" %>
 
-<div>
-<%= form_for @post do |f| %>
+<div class="row">
+	<div class="col-md-7" id="addsection">
+		<h1>Add a pet!</h1>
 
-	<div>
-		<%= f.label :type, "Type:" %>
-		<%= f.text_field :type %>
-	</div>
-	<div>	
-		<%= f.label :breed, "Breed:" %>
-		<%= f.text_field :breed %>
-	</div>
-	<div>
-		<%= f.label :age, "Age:" %>
-		<%= f.text_field :age %>
-	</div>
-	<div>
-		<%= f.label :gender, "Gender:" %>
-		<%= f.text_field :gender %>
-	</div>
-	<div>
-		<%= f.label :price, "Price:" %>
-		<%= f.text_field :price %>
-	</div>
+		<div>
+		<%= form_for @post do |f| %>
 
-	<%= f.file_field :image %>
-	<%= f.submit "Post this pet" %>
+			<div>
+				<%= f.label :type, "Type:" %>
+				<%= f.select :type, TYPES %>
+			</div>
+			<div>
+				<%= f.label :gender, "Gender:" %>
+				<%= f.select :gender, GENDERS %>
+			</div>
+			<div>
+				<%= f.label :age, "Age:" %>
+				<%= f.select :age, AGES %>
+			</div>
+			<div>	
+				<%= f.label :breed, "Breed:" %>
+				<%= f.text_field :breed %>
+			</div>
+			<div>
+				<%= f.label :price, "Price:" %>
+				<%= f.text_field :price %>
+			</div>
 
-<% end %>
+			<div>
+			<%= f.label :image, "Image:" %>
+			<%= f.file_field :image %>
+			</div>
+			<div>
+			<%= f.submit "Post this pet" %>
+			</div>
 
+		<% end %>
+
+		</div>
+	</div>
 </div>

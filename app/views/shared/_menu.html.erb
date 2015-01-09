@@ -1,0 +1,19 @@
+<header>
+	<h2 id="logo"><%= link_to "Pet Me", root_path %></h2>
+	<nav id="nav-bar">
+	<div class="btn btn-success">
+		<%= link_to "Post a pet!", new_post_path %>
+	</div>
+	<div>
+		<%= link_to "Sign Up", signup_path %>
+	</div>
+	<div>
+		<%= link_to "Log In", login_path %>
+	</div>
+	<div>
+		<% if logged_in? %>
+			<%= link_to 'Log Out', logout_path, method: :delete %>
+		<% end %>
+	</div>
+	</nav>
+</header>
