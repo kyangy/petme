@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		if @post.save
-			redirect_to list_path(params[:type])
+			redirect_to list_path({type: @post.type, gender: @post.gender, age: @post.age})
 		else
 			render :new
 		end

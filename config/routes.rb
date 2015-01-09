@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   resources :posts, only: [:new, :create]
-  get '/list' => 'posts#index'
+  get '/list' => 'posts#index', as: :list
 
   resources :users, only: :create
   get '/signup' => 'users#new'

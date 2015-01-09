@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <header>
 	<h2 id="logo"><%= link_to "Pet Me", root_path %></h2>
 	<nav id="nav-bar">
@@ -8,12 +9,25 @@
 		<%= link_to "Sign Up", signup_path %>
 	</div>
 	<div>
-		<%= link_to "Log In", login_path %>
-	</div>
-	<div>
-		<% if logged_in? %>
-			<%= link_to 'Log Out', logout_path, method: :delete %>
-		<% end %>
+		<%= link_to 'Log Out', logout_path, method: :delete %>
 	</div>
 	</nav>
 </header>
+<% end %>
+
+<% if logged_in? == false %>
+<header>
+	<h2 id="logo"><%= link_to "Pet Me", root_path %></h2>
+	<nav id="nav-bar">
+	<div class="btn btn-success">
+		<%= link_to "Post a pet!", login_path %>
+	</div>
+	<div>
+		<%= link_to "Sign Up", signup_path %>
+	</div>
+	<div>
+		<%= link_to "Log In", login_path %>
+	</div>
+	</nav>
+</header>
+<% end %>
