@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  resources :posts, only: [:new, :create]
+  resources :posts, only: [:new, :create, :show]
   get '/list' => 'posts#index', as: :list
 
   resources :users, only: :create

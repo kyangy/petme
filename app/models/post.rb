@@ -6,6 +6,9 @@ class Post
   field :age, type: String
   field :gender, type: String
   field :price, type: Float
+  field :about, type: String
+
+  belongs_to :user
 
   mount_uploader :image, AvatarUploader
 end

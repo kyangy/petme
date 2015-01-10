@@ -1,43 +1,51 @@
-<%= render "shared/menu" %>
+<div>
+	<%= render "shared/menu" %>
+</div>
 
 <div class="row">
-	<div class="col-md-3 col-md-offset-3" id="addsection">
-		<h1>Add a pet!</h1>
-
-		<div>
+	<div class="col-md-5 col-md-offset-1">
+		<h1>Add a pet</h1>
+		<h3>Include information about the pet to potential buyers</h3>
 		<%= form_for @post do |f| %>
 
-			<div>
-				<%= f.label :type, "Type:" %>
-				<%= f.select :type, TYPES %>
+			<div class="form-group">
+				<%= f.label :type, "Type:", class: "control-label" %>
+				<%= f.select :type, TYPES, class: "form-control" %>
 			</div>
-			<div>
-				<%= f.label :gender, "Gender:" %>
-				<%= f.select :gender, GENDERS %>
+			<div class="form-group">
+				<%= f.label :gender, "Gender:", class: "control-label" %>
+				<%= f.select :gender, GENDERS, class: "form-control" %>
 			</div>
-			<div>
-				<%= f.label :age, "Age:" %>
-				<%= f.select :age, AGES %>
+			<div class="form-group">
+				<%= f.label :age, "Age:", class: "control-label" %>
+				<%= f.select :age, AGES, class: "form-control" %>
 			</div>
-			<div>	
-				<%= f.label :breed, "Breed:" %>
-				<%= f.text_field :breed %>
+			<div class="form-group">	
+				<%= f.label :breed, "Breed:", class: "control-label" %>
+				<%= f.text_field :breed, placeholder: "ex. Golden Retriever", class: "form-control" %>
 			</div>
-			<div>
-				<%= f.label :price, "Price:" %>
-				<%= f.text_field :price %>
+			<div class="input-prepend input-append">
+				<span class="add-on">$</span>
+				<%= f.text_field :price, class: "span2" %>
+				<span class="add-on">.00</span>
 			</div>
 
-			<div>
-			<%= f.label :image, "Image:" %>
+			<div class="form-group">
+			<%= f.label :image, "Image:", class: "control-label" %>
 			<%= f.file_field :image %>
 			</div>
-			<div>
-			<%= f.submit "Post this pet" %>
-			</div>
+
+			<%= f.submit "Post this pet", class: "btn btn-primary" %>
+
+	</div>
+	</br>
+	<div class="col-md-5">
+		<h4>Additional Information</h4>
+		<div class="form-group">
+		<%= f.text_area :about, class: "form-control input-lg" %>
+		</div>
+	</div>
 
 		<% end %>
 
-		</div>
-	</div>
 </div>

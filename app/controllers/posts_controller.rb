@@ -4,16 +4,14 @@ class PostsController < ApplicationController
 		@posts = Post.where(type: params[:type], gender: params[:gender], age: params[:age]).all
 	end
 
-	def show
-		@post = Post.find(params[:id])
-	end
-
 	def new
+		@users = User.all
 		@post = Post.new
 	end
 
 	def create
 		@post = Post.new(post_params)
+		@post.user = current_user
 		if @post.save
 			redirect_to list_path({type: @post.type, gender: @post.gender, age: @post.age})
 		else
@@ -24,7 +22,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:type, :breed, :age, :gender, :price, :image)
+		params.require(:post).permit(:type, :breed, :age, :gender, :price, :about, :image, :user)
 	end
 
 end

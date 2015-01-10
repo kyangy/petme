@@ -29,6 +29,10 @@ body {
  	background-size: cover;
 }
 
+@mixin hover {
+	text-decoration: none;
+} 
+
 
 #main {
  	background: url(<%= image_path 'dog.jpg' %>);
@@ -43,6 +47,9 @@ body {
 		display: inline-block;
  		padding: 5px;
 	}
+	a:hover {
+		@include hover;
+	}
 }
 
  header a {
@@ -53,6 +60,9 @@ body {
  	display: inline-block;
  	margin-left: 50px;
  	color: white;
+ 	a:hover {
+ 		@include hover;
+ 	}
  }
 
  #search {
@@ -68,6 +78,11 @@ body {
  	text-align: center;
  	margin-top: 100px;
  }
+
+ #signup {
+ 	background: url(<%= image_path 'background.jpg' %>)
+ }
+
 
 
 
