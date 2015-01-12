@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get '/list' => 'posts#index', as: :list
 
   resources :users, only: [:create, :edit, :update]
-  get '/signup' => 'users#new'
+  get '/signup' => 'users#new', as: :signup
 
-  get '/login' => 'sessions#new'
+  get '/login' => 'sessions#new', as: :login
   post '/login' => 'sessions#create'
-  delete '/logout' => 'sessions#destroy'
+  delete '/logout' => 'sessions#destroy', as: :logout
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
