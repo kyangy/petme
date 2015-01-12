@@ -60,6 +60,7 @@ body {
  	display: inline-block;
  	margin-left: 50px;
  	color: white;
+ 	font-family: 'Courgette', cursive;
  	a:hover {
  		@include hover;
  	}
@@ -79,8 +80,56 @@ body {
  	margin-top: 100px;
  }
 
- #signup {
- 	background: url(<%= image_path 'background.jpg' %>)
+ #signup,
+ #login {
+ 	background: url(<%= image_path 'scale.jpg' %>);
+ 	@include background;
+ 	color: white;
+ }
+
+ #addbackground {
+ 	background: url(<%= image_path 'fur.jpg' %>);
+ 	@include background;
+ 	border-top: 2px solid;
+ }
+
+ #cat {
+ 	background: url(<%= image_path 'cat.jpg' %>);
+ 	@include background;
+ 	height: 650px;
+ }
+
+ #cat-page {
+ 	margin-top: 250px;
+ 	color: white;
+ }
+
+ #secondary {
+ 	background-color: grey;
+ }
+
+ #img-window {
+	height: 395px;
+	overflow-y: auto;
+	margin-left: 20px;
+	img {
+		border: 2px solid;
+	}
+ }
+
+ .nav-black{
+ 	border-bottom: 3px solid;
+ 	background-color: black;
+ 	a {
+ 		color: white;
+ 	}
+ }
+
+ .part {
+ 	background-color: black;
+ 	padding: 30px;
+ 	border-radius: 30px;
+ 	margin-top: 50px;
  }
 
 

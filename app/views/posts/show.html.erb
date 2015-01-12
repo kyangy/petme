@@ -1,0 +1,9 @@
+<%= render "shared/menu" %>
+
+<h1><%= @post.breed %></h1>
+
+<%= image_tag @post.image.url, :size => "360x280", :crop => :fill %>
+
+<%= @post.about %>
+
+<%= link_to "Back to list", list_path({type: @post.type, gender: @post.gender, age: @post.age}) %>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :posts, only: [:new, :create, :show]
   get '/list' => 'posts#index', as: :list
 
-  resources :users, only: :create
+  resources :users, only: [:create, :edit, :update]
   get '/signup' => 'users#new'
 
   get '/login' => 'sessions#new'

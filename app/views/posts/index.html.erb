@@ -1,23 +1,28 @@
-<%= render "shared/menu" %>
+<div class="nav-border">
+	<%= render "shared/menu" %>
+</div>
 
 <h1><%= params[:type] %></h1>
 <h2><%= params[:gender] %></h2>
 <h3><%= params[:age] %></h3>
 
-<% @posts.each do |post| %>
+<div id="img-window">
+	<% @posts.each do |post| %>
 
-	<%= link_to "more info", post_path(:id) %>
-	<div>
-		<%= image_tag post.image.url %>
-	</div>
+			<%= image_tag post.image.url, :size => "360x280", :crop => :fill %>
+		<div>
+			Breed: <%= post.breed %>
+		</div>
 
-	<div>
-		Breed: <%= post.breed %>
-	</div>
+		<div>
+			<%= post.user["email"] %>
+		</div>
 
-	<div>
-		<%= post.user["email"] %>
-	</div>
+		<div>
+			<%= link_to "More Info", post_path(post) %>
+		</div>
+
+	<% end %>
+</div>
 
 
-<% end %>

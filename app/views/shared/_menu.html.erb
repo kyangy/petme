@@ -4,7 +4,7 @@
 	<nav id="nav-bar">
 		<%= link_to "Post a pet!", new_post_path, class: "btn btn-success" %>
 	<div>
-		<%= link_to "Sign Up", signup_path %>
+		<%= link_to "My Account", edit_user_path(current_user) %>
 	</div>
 	<div>
 		<%= link_to 'Log Out', logout_path, method: :delete %>
@@ -17,9 +17,7 @@
 <header>
 	<h2 id="logo"><%= link_to "Pet Me", root_path %></h2>
 	<nav id="nav-bar">
-	<div class="btn btn-success">
-		<%= link_to "Post a pet!", login_path %>
-	</div>
+		<%= link_to "Post a pet!", login_path, class: "btn btn-success" %>
 	<div>
 		<%= link_to "Sign Up", signup_path %>
 	</div>

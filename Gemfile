@@ -10,7 +10,9 @@ gem 'mini_magick'
 gem 'bcrypt', '~> 3.1.9'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'rails_12factor', group: :production
+gem 'thin', group: :production
 gem 'figaro'
+gem 'httparty'
 # Mongoid
 gem 'mongoid', '~> 4.0.0'
 # Use SCSS for stylesheets
