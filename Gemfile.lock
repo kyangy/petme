@@ -131,6 +131,7 @@ GEM
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
     formatador (0.2.5)
+    geocoder (1.2.6)
     hike (1.2.3)
     httparty (0.13.3)
       json (~> 1.8)
@@ -246,6 +247,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   figaro
   fog
+  geocoder
   httparty
   jbuilder (~> 2.0)
   jquery-rails

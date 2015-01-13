@@ -2,15 +2,14 @@
 	<%= render "shared/menu" %>
 </div>
 
-<%= link_to "My Account", edit_user_path(@user) %>
-<div id="signup">
+<div class="snake">
 
 	<div class="row">
 		<div class="col-sm-4 col-sm-offset-4">
 			<div>
-				<ul>
+				<ul class="list-group">
 				  <% @user.errors.full_messages.each do |msg| %>
-				    <li><%= msg %></li>
+				    <li class="list-group-item list-group-item-danger"><%= msg %></li>
 				  <% end %>
 				</ul>
 			</div>
@@ -28,6 +27,11 @@
 				<div class="form-group">
 					<%= f.label :email, class: "control-label"%>
 					<%= f.text_field :email, class: "form-control" %>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :number, "Phone Number (Optional)", class: "control-label"%>
+					<%= f.text_field :number, class: "form-control" %>
 				</div>
 
 				<div class="form-group">

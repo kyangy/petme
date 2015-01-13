@@ -21,12 +21,13 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@comment = Comment.new
 	end
 
 	private
 
 	def post_params
-		params.require(:post).permit(:type, :breed, :age, :gender, :price, :about, :image, :user)
+		params.require(:post).permit(:type, :breed, :age, :gender, :price, :description, :image, :user)
 	end
 
 end

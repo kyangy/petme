@@ -2,10 +2,12 @@ class User
   include Mongoid::Document
   field :name, type: String
   field :email, type: String
+  field :phone_number, type: Float
   field :password_digest, type: String
   attr_reader :password
 
   has_many :posts
+  embedded_in :comment
 
   def password=(unencrypted_password)
     unless unencrypted_password.empty?

@@ -1,31 +1,45 @@
-<div class="part">
-<h1 class="text-center">Change Account Information</h1>
+<div class="nav-black">
+	<%= render "shared/menu" %>
+</div>
 
-<%= form_for @user do |f| %>
+<div class="snake">
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+			<div class="part">
+			<h1 class="text-center">Account Information</h1>
+			<%= form_for @user do |f| %>
 
-	<div class="form-group">
-		<%= f.label :name, class: "control-label" %>
-		<%= f.text_field :name, class: "form-control" %>
+				<div class="form-group">
+					<%= f.label :name, class: "control-label" %>
+					<%= f.text_field :name, class: "form-control" %>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :email, class: "control-label"%>
+					<%= f.text_field :email, class: "form-control" %>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :phone_number, "Phone Number (Optional)", class: "control-label"%>
+					<%= f.text_field :phone_number, class: "form-control" %>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :password, class: "control-label" %>
+					<%= f.password_field :password, class: "form-control" %>
+				</div>
+
+				<div class="form-group">
+					<%= f.label :password_confirmation, class: "control-label" %>
+					<%= f.password_field :password_confirmation, class: "form-control" %>
+				</div>
+
+				<div>
+					<%= f.submit "Update", class: "btn btn-primary" %>
+				</div>
+
+			<% end %>
+			</div>
+		</div>
 	</div>
-
-	<div class="form-group">
-		<%= f.label :email, class: "control-label"%>
-		<%= f.text_field :email, class: "form-control" %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :password, class: "control-label" %>
-		<%= f.password_field :password, class: "form-control" %>
-	</div>
-
-	<div class="form-group">
-		<%= f.label :password_confirmation, class: "control-label" %>
-		<%= f.password_field :password_confirmation, class: "form-control" %>
-	</div>
-
-	<div>
-		<%= f.submit "Update", class: "btn btn-primary" %>
-	</div>
-
-<% end %>
 </div>

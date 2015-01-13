@@ -1,9 +1,54 @@
-<%= render "shared/menu" %>
+<div class="nav-border">
+	<%= render "shared/menu" %>
+</div>
 
-<h1><%= @post.breed %></h1>
 
-<%= image_tag @post.image.url, :size => "360x280", :crop => :fill %>
+<div class="row">
+	<div class="col-md-5 col-md-offset-2">
+		<h1><%= @post.breed %></h1>
+		<h6>Posted on: <%= @post.date_published %></h6>
+		<div id="show-img">
+		<%= image_tag @post.image.url, :size => "463x300", :crop => :fill %>
+		</div>
+	</div>
 
-<%= @post.about %>
+<div class="col-md-3">
+	<div id="contact">
+		<h3>Contact owner</h3>
+		<p><%= @post.user["name"] %></p>
+		<p><%= @post.user["email"] %></p>
+		<p><%= @post.user["phone_number"] %></p>
+	</div>
 
-<%= link_to "Back to list", list_path({type: @post.type, gender: @post.gender, age: @post.age}) %>
+	<div id="price">
+		<h3>Price</h3>
+		<p>$ <%= @post.price %></p>
+		<%= link_to "Back to list", list_path({type: @post.type, gender: @post.gender, age: @post.age}) %>
+	</div>
+</div>
+
+</div>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<h3>About</h3>
+		<p><%= @post.description %></p>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<h4>Comments</h4>
+		<% @post.comments.each do |comment| %>
+		<p><%= comment.commenter %> - <%= comment.body %> - <%= comment.date_added %></p>
+		<% end %>
+		<%= form_for [@post, @comment] do |f| %>
+
+			<div>
+				<%= f.text_area :body %>
+			</div>
+
+			<%= f.submit "Comment" %>
+		<% end %>
+	</div>
+</div>

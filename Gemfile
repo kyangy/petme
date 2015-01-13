@@ -13,6 +13,7 @@ gem 'rails_12factor', group: :production
 gem 'thin', group: :production
 gem 'figaro'
 gem 'httparty'
+gem 'geocoder'
 # Mongoid
 gem 'mongoid', '~> 4.0.0'
 # Use SCSS for stylesheets

@@ -80,8 +80,7 @@ body {
  	margin-top: 100px;
  }
 
- #signup,
- #login {
+ .snake {
  	background: url(<%= image_path 'scale.jpg' %>);
  	@include background;
  	color: white;
@@ -90,7 +89,7 @@ body {
  #addbackground {
  	background: url(<%= image_path 'fur.jpg' %>);
  	@include background;
- 	border-top: 2px solid;
+ 	border-top: 3px solid;
  }
 
  #cat {
@@ -105,13 +104,15 @@ body {
  }
 
  #secondary {
- 	background-color: grey;
+ 	background: url(<%= image_path 'background.jpg' %>);
+ 	@include background;
  }
 
  #img-window {
-	height: 395px;
+	height: 455px;
 	overflow-y: auto;
 	margin-left: 20px;
+	padding: 20px;
 	img {
 		border: 2px solid;
 	}
@@ -125,12 +126,37 @@ body {
  	}
  }
 
+ .nav-border {
+ 	border-bottom: 3px solid;
+ }
+
  .part {
  	background-color: black;
  	padding: 30px;
  	border-radius: 30px;
  	margin-top: 50px;
  }
+
+ #list-name {
+ 	margin-left: 20px;
+ }
+
+ #list-info {
+ 	margin-left: 40px;
+ }
+
+ #list-section {
+ 	border-right: 3px solid;
+ }
+
+ #show-img {
+ 	border: 2px solid;
+ }
+
+ #contact {
+ 	margin-top: 70px;
+ }
+
 
 
 
