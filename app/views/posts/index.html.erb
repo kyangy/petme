@@ -19,7 +19,12 @@
 				</div>
 
 				<div>
+				 	<% if logged_in? %>
 					<%= link_to "More Info", post_path(post) %>
+					<% end %>
+					<% if logged_in? == false %>
+					<%= link_to "More Info", login_path %>
+					<% end %>
 				</div>
 
 			<% end %>

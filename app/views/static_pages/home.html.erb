@@ -22,69 +22,57 @@
 
 <div class="cotainer-fluid">
 	<div class="row" id="secondary">
-		<h1 class="text-center">Help find these pets a home</h1>
-		<div class="col-md-4">
-			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<div class="col-md-6 col-md-offset-1">
+			<h1 class="text-center">"Help find these pets a home"</h1>
+			<h2 class="text-center">Lorem ipsum dolor sit amet</h2>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
 		</div>
 
-		<div class="col-md-4">
-			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		<div class="col-md-2 house">
+			<%= image_tag 'house.png', :size => "350x200" %>
 		</div>
-
-		<div class="col-md-4">
-			<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h2>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</div>
-	</div>
-
-	<div class="container-fluid" id="cat">
-	 	<div class="row">
-	 		<div class="col-md-6">
-	 			<div id="cat-page">
-		 			<h1>Make a difference</h1>
-		 			<h2>Don't leave unwanted pets outside on the streets</h2>
-		 			<h3>
-		 			<%= link_to "Post a pet!", new_post_path, class: "btn btn-success" %>
-	 			</div>
-	 		</div>
-	 	</div>
 	</div>
 </div>
+
+<div class="container-fluid" id="iphone">
+	<div class="row">
+		<div class="col-md-3 col-md-offset-7">
+			<h1>Pet Me</h1>
+			<h2>Coming soon to your phone</h2>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid" id="cat">
+ 	<div class="row">
+ 		<div class="col-md-6">
+ 			<div id="cat-page">
+	 			<h1>Make a difference</h1>
+	 			<h2>Don't leave unwanted pets out on the streets</h2>
+	 			<p>
+		 			Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<% if logged_in? %>
+	 			<%= link_to "Post a pet!", new_post_path, class: "btn btn-success" %>
+	 			<% end %>
+	 			<% if logged_in? == false %>
+	 			<%= link_to "Post a pet!", login_path, class: "btn btn-success" %>
+	 			<% end %>
+ 			</div>
+ 		</div>
+ 	</div>
+</div>
+
+
 
 
 		

@@ -6,8 +6,6 @@ class Comment
 
   embedded_in :post
 
-  # accepts_nested_attributes_for :user
-
   def date_added
   	self.created_at.localtime.strftime("%-m/%-d/%Y | %l:%M %p")
   end
