@@ -10,12 +10,13 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
-		@post.user = current_user
+		
+		@post = current_user.posts.build(post_params)
+		
 		if @post.save
 			redirect_to list_path({type: @post.type, gender: @post.gender, age: @post.age})
 		else
-			render :new
+			render "new"
 		end
 	end
 
