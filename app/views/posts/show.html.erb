@@ -2,19 +2,19 @@
 	<%= render "shared/menu" %>
 </div>
 
-
+<div class="container-fluid">
 <div class="row">
 	<div class="col-md-5 col-md-offset-2">
 		<h1><%= @post.breed %></h1>
 		<h6>Posted on: <%= @post.date_published %></h6>
 		<div id="show-img">
-		<%= image_tag @post.image.url, :size => "463x300", :crop => :fill %>
+		<%= image_tag @post.image.url, :size => "450x300", :crop => :fill %>
 		</div>
 	</div>
 
 <div class="col-md-2">
 	<div id="contact">
-		<h3>Contact owner</h3>
+		<h3>Contact Owner</h3>
 		<p><%= @post.user["name"] %></p>
 		<p><%= @post.user["email"] %></p>
 		<p><%= @post.user["phone_number"] %></p>
@@ -45,10 +45,11 @@
 		<%= form_for [@post, @comment] do |f| %>
 
 			<div>
-				<%= f.text_area :body %>
+				<%= f.text_area :body, class: "input-lg" %>
 			</div>
 
-			<%= f.submit "Comment" %>
+			<%= f.submit "Comment", class: "btn btn-primary" %>
 		<% end %>
 	</div>
+</div>
 </div>

@@ -34,6 +34,7 @@ body {
 } 
 
 
+
 #main {
  	background: url(<%= image_path 'dog.jpg' %>);
  	@include background;
@@ -89,11 +90,12 @@ body {
  #addbackground {
  	background: url(<%= image_path 'fur.jpg' %>);
  	@include background;
+ 	font-family: 'Bubblegum Sans', cursive;
  	border-top: 3px solid;
  }
 
  #cat {
- 	background: url('https://s3.amazonaws.com/petmeapp/uploads/post/image/cat.jpg?X-Amz-Date=20150113T185717Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=97fe65b2f556963ea393ac62a6514978c1eb7de6b2009cb466b5105860ba343b&X-Amz-Credential=ASIAIPNBAAHFMDLO3IYA/20150113/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEKz//////////wEagAK0%2BAKwOeXj8cjA35YRPwdCNR2yFvWLO5%2ByQh/sYAEQBo2nmpqf5uKD6D7a5R%2B5RCNtpYuiiqT2lz4fr1VSfgMC0HPK%2BoFqz5c/L31f7nxzReNXc2a1padvZ19QNSBq37fvfQAVyPpQaLqal5BQto76qOnrP%2BoqMS9rRLCtXAD8BMZnNUzQgRZdhPOmznslEO6HtXIx2LeE1/JY5UEBipxR8Qs5Lx9lbbuYKn/FSmLWHQ5EoBPS4RL7fbBEzn/gQ6Tog5z6EOQ8m8aZnRRJpQphU2E40Z7ccKtYszoThSNK2glYYRnfv9lvsAJg3zda5JVYHTI3O24MyAwktsHvjDq0IMjT1aUF');
+ 	background-image: url('https://s3.amazonaws.com/petmeapp/uploads/post/image/cat.jpg?X-Amz-Date=20150113T185717Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=97fe65b2f556963ea393ac62a6514978c1eb7de6b2009cb466b5105860ba343b&X-Amz-Credential=ASIAIPNBAAHFMDLO3IYA/20150113/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=AQoDYXdzEKz//////////wEagAK0%2BAKwOeXj8cjA35YRPwdCNR2yFvWLO5%2ByQh/sYAEQBo2nmpqf5uKD6D7a5R%2B5RCNtpYuiiqT2lz4fr1VSfgMC0HPK%2BoFqz5c/L31f7nxzReNXc2a1padvZ19QNSBq37fvfQAVyPpQaLqal5BQto76qOnrP%2BoqMS9rRLCtXAD8BMZnNUzQgRZdhPOmznslEO6HtXIx2LeE1/JY5UEBipxR8Qs5Lx9lbbuYKn/FSmLWHQ5EoBPS4RL7fbBEzn/gQ6Tog5z6EOQ8m8aZnRRJpQphU2E40Z7ccKtYszoThSNK2glYYRnfv9lvsAJg3zda5JVYHTI3O24MyAwktsHvjDq0IMjT1aUF');
  	@include background;
  	height: 650px;
  }
@@ -149,6 +151,7 @@ body {
 
  #list-section {
  	border-right: 3px solid;
+ 	font-family: 'Open Sans Condensed', sans-serif;
  }
 
  #show-img {
@@ -157,12 +160,6 @@ body {
 
  #contact {
  	margin-top: 90px;
-
- }
-
- .house {
- 	margin-left: 50px;
- 	padding: 20px;
  }
 
  #iphone {
@@ -173,6 +170,14 @@ body {
  		font-family: Courgette, cursive;
  		margin-top: 200px;
  	}
+ }
+
+ .house img {
+ 	margin-left: 20px;
+ 	margin-top: 20px;
+ 	border-radius: 50%;
+ 	border: 2px solid white;
+ 	padding: 20px;
  }
 
 
