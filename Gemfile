@@ -9,8 +9,6 @@ gem 'fog'
 gem 'mini_magick'
 gem 'bcrypt', '~> 3.1.9'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'rails_12factor', group: :production
-gem 'thin', group: :production
 gem 'figaro'
 gem 'httparty'
 gem 'geocoder'
@@ -40,6 +38,11 @@ gem 'spring',        group: :development
 gem 'better_errors'
 
 gem 'quiet_assets'
+
+group :production do 
+  gem 'rails_12factor'
+  gem 'thin'
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
