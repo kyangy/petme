@@ -21,7 +21,6 @@ class Post
   mount_uploader :image, AvatarUploader
 
   def date_published
-    # self refers to the object thats calling this method
     self.created_at.localtime.strftime("%A, %B %-d, %Y at %l:%M %p")
   end
 end

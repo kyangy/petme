@@ -6,7 +6,9 @@
 <div class="row">
 	<div class="col-md-5 col-md-offset-2">
 		<h1><%= @post.breed %></h1>
-		<h6>Posted on: <%= @post.date_published %></h6>
+		<h6>Posted on: <%= @post.date_published %> <% if post_owner %>
+			<%= link_to "Delete my post", post_path(@post), method: :delete %>
+			<% end %></h6>
 		<div id="show-img">
 		<%= image_tag @post.image.url, :size => "450x304", :crop => :fill %>
 		</div>
@@ -38,9 +40,6 @@
 	<div class="col-md-3">
 		<h3>Location</h3>
 		<p><iframe src="<%= @map %>"></iframe></p>
-		<% if post_owner %>
-			<%= link_to "Delete", post_path(@post), method: :delete %>
-			<% end %>
 	</div>
 </div>
 
