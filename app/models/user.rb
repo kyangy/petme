@@ -7,7 +7,6 @@ class User
   attr_reader :password
 
   has_many :posts
-  embeds_one :comment
 
   def password=(unencrypted_password)
     unless unencrypted_password.empty?

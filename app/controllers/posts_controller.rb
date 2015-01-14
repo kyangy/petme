@@ -5,14 +5,12 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		@users = User.all
+		# @users = User.all
 		@post = Post.new
 	end
 
 	def create
-		
-		@post = current_user.posts.build(post_params)
-		
+		@post = current_user.posts.new(post_params)
 		if @post.save
 			redirect_to list_path({type: @post.type, gender: @post.gender, age: @post.age})
 		else
