@@ -8,11 +8,11 @@
 		<h1><%= @post.breed %></h1>
 		<h6>Posted on: <%= @post.date_published %></h6>
 		<div id="show-img">
-		<%= image_tag @post.image.url, :size => "502x304", :crop => :fill %>
+		<%= image_tag @post.image.url, :size => "450x304", :crop => :fill %>
 		</div>
 	</div>
 
-<div class="col-md-2">
+<div class="col-md-4">
 	<div id="contact">
 		<h3>Contact Owner</h3>
 		<p><%= @post.user["name"] %></p>
@@ -30,9 +30,14 @@
 </div>
 
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="col-md-5 col-md-offset-2">
 		<h3>About</h3>
 		<p><%= @post.description %></p>
+	</div>
+
+	<div class="col-md-3">
+		<h3>Location</h3>
+		<p><iframe src="<%= @map %>"></iframe></p>
 	</div>
 </div>
 

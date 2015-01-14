@@ -1,14 +1,12 @@
 class Post
   include Mongoid::Document
   include Mongoid::Timestamps
-  # include Geocoder::Model::Mongoid
-  # field :latitude, type: Float
-  # field :longitude, type: Float
-  # field :coordinates, :type => Array
-  # field :address
-  # geocoded_by :address   # can also be an IP address
-  # after_validation :geocode         # auto-fetch coordinates
-  # geocoded_by :address, :skip_index => true
+  include Geocoder::Model::Mongoid
+  field :coordinates, :type => Array
+  field :address
+  geocoded_by :address   # can also be an IP address
+  after_validation :geocode         # auto-fetch coordinates
+  geocoded_by :address, :skip_index => true
 
   field :type, type: String
   field :breed, type: String

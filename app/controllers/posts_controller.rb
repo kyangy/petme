@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
+include PostsHelper
 
 	def index
 		@posts = Post.where(type: params[:type], gender: params[:gender], age: params[:age]).all
 	end
 
 	def new
-		# @users = User.all
 		@post = Post.new
 	end
 
@@ -21,12 +21,14 @@ class PostsController < ApplicationController
 	def show
 		@post = Post.find(params[:id])
 		@comment = Comment.new
+		address = @post.address
+		google_maps(address)
 	end
 
 	private
 
 	def post_params
-		params.require(:post).permit(:type, :breed, :age, :gender, :price, :description, :image, :user)
+		params.require(:post).permit(:type, :breed, :age, :gender, :price, :description, :image, :user, :coordinates, :address, :geocode)
 	end
 
 end
