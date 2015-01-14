@@ -25,6 +25,15 @@ include PostsHelper
 		google_maps(address)
 	end
 
+	def destroy
+		@post = Post.find(params[:id])
+		if @post.destroy
+			redirect_to list_path({type: @post.type, gender: @post.gender, age: @post.age})
+		else
+			redirect_to post_path(@post)
+		end
+	end
+
 	private
 
 	def post_params

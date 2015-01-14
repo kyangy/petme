@@ -5,4 +5,8 @@ module PostsHelper
 		map_api = ENV['GOOGLE_MAPS']
 		@map = "https://www.google.com/maps/embed/v1/place?key=#{map_api}&q=#{address}"
 	end
+
+	def post_owner
+		current_user == @post.user
+	end
 end

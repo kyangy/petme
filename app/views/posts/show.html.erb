@@ -38,6 +38,9 @@
 	<div class="col-md-3">
 		<h3>Location</h3>
 		<p><iframe src="<%= @map %>"></iframe></p>
+		<% if post_owner %>
+			<%= link_to "Delete", post_path(@post), method: :delete %>
+			<% end %>
 	</div>
 </div>
 
@@ -45,7 +48,8 @@
 	<div class="col-md-8 col-md-offset-2">
 		<h4>Comments</h4>
 		<% @post.comments.each do |comment| %>
-		<p><%= comment.commenter %> - <%= comment.body %> - <%= comment.date_added %></p>
+		<p><%= comment.commenter %> - <%= comment.date_added %></p>
+		<p><%= comment.body %></p>
 		<% end %>
 		<%= form_for [@post, @comment] do |f| %>
 
